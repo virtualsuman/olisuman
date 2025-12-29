@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Dashboard</title>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h2>Welcome to Student Dashboard</h2>
+    <div id="userInfo"></div>
+    <button onclick="logout()">Logout</button>
+
+    <script>
+    auth.onAuthStateChanged(user => {
+        if (user) {
+            db.collection("students").doc(user.uid).get()
+            .then(doc => {
+                document.getElementById("userInfo").innerHTML = `Hello, ${doc.data().name}`;
+            });
+        } else {
+            window.location = "index.html";
+        }
+    });
+
+    function logout() {
+        auth.signOut().then(() => {
+            window.location = "index.html";
+        });
+    }
+    </script>
+</body>
+</html>

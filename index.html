@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Login / Signup</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h2>Teaching Coach Portal</h2>
+
+    <div id="signup">
+        <h3>Signup</h3>
+        <input type="text" id="signupName" placeholder="Full Name"><br>
+        <input type="email" id="signupEmail" placeholder="Email"><br>
+        <input type="password" id="signupPassword" placeholder="Password"><br>
+        <button onclick="signup()">Signup</button>
+    </div>
+
+    <hr>
+
+    <div id="login">
+        <h3>Login</h3>
+        <input type="email" id="loginEmail" placeholder="Email"><br>
+        <input type="password" id="loginPassword" placeholder="Password"><br>
+        <button onclick="login()">Login</button>
+    </div>
+
+</body>
+</html>
